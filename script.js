@@ -24,3 +24,30 @@ class ImprovedFighter extends Fighter {
         this.hit(enemy, point*2);
     }
 }
+
+let fighter = new Fighter();
+let improvedFighter = new ImprovedFighter();
+
+let fight = (fighter, improvedFighter, ...points) =>
+{
+    let attacker = fighter;
+    let target = improvedFighter;
+    let tmp;
+    let pointIndex = 0;
+
+    while(true){
+        attacker.hit(target, points[pointIndex]);
+        if(target.health<0){
+            console.log(`${attacker.name} wins!`);
+            break;
+        }
+        tmp = attacker;
+        attacker = target;
+        target = tmp;
+        if(pointIndex === points.length-1){
+            pointIndex=0;
+        }else{
+            pointIndex++;
+        }
+    }
+};
