@@ -15,3 +15,12 @@ class Fighter {
     }
 }
 
+class ImprovedFighter extends Fighter {
+    constructor(name = "Neo", power = 9001, health = 1000000) {
+        super(name, power, health);
+    }
+
+    doubleHit(enemy, point = 1) {
+        this.hit(enemy, point*2);
+    }
+}
