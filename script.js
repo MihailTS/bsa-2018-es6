@@ -51,3 +51,5 @@ let fight = (fighter, improvedFighter, ...points) =>
         }
     }
 };
+
+fight(fighter, improvedFighter, 4, 5, 1, 6, 4);
