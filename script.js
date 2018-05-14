@@ -10,7 +10,7 @@ class Fighter {
     }
 
     setDamage(damage = 0) {
-        this.health = this.health - damage;
+        this.health -= damage;
         console.log(`health: ${this.health}`);
     }
 }
@@ -71,7 +71,8 @@ let fightWithDraw = (fighter, improvedFighter, ...points) => {
         attacker = target;
         target = tmp;
     }
-	console.log(result);
+
+    console.log(result);
 }
 
 fight(fighter, improvedFighter, 4, 5, 1, 6, 4);
