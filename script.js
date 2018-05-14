@@ -37,7 +37,7 @@ let fight = (fighter, improvedFighter, ...points) =>
 
     while(true){
         attacker.hit(target, points[pointIndex]);
-        if(target.health < 0) {
+        if(target.health <= 0) {
             console.log(`${attacker.name} wins!`);
             break;
         }
