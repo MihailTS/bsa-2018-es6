@@ -54,4 +54,24 @@ let fight = (fighter, improvedFighter, ...points) =>
     }
 };
 
+let fightWithDraw = (fighter, improvedFighter, ...points) => {
+    let attacker = fighter;
+    let target = improvedFighter;
+    let tmp;
+    let result = 'Draw!';
+
+    for(let point of points){
+        attacker.hit(target, point);
+        if(target.health <= 0) {
+            result = `${attacker.name} wins!`;
+            break;
+        }
+
+        tmp = attacker;
+        attacker = target;
+        target = tmp;
+    }
+	console.log(result);
+}
+
 fight(fighter, improvedFighter, 4, 5, 1, 6, 4);
